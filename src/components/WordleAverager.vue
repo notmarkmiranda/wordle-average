@@ -14,8 +14,8 @@
       </template>
     </div>
     <div class="col">
-      <h3>Total Number of successful plays: {{ numberOfPlays }}</h3>
-      <h3>Total Number of guesses: {{ sumOfGuesses }}</h3>
+      <h3>Total number of successful plays: {{ numberOfPlays }}</h3>
+      <h3>Total number of guesses: {{ sumOfGuesses }}</h3>
       <h3>Average number of guesses: {{average}}</h3>
     </div>
   </div>
