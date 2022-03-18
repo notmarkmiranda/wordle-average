@@ -1,15 +1,15 @@
 <template>
-  <div class="col-1">
-    <label><strong>{{ label }}</strong></label>
-    <input
-      :ref="refName"
-      type="number"
-      placeholder="0"
-      v-model="inputVal"
-      @focus="$event.target.select()"
-      class="form-control form-control-lg"
-    >
-  </div>
+    <div class="col-md-2 col-lg-1">
+      <label><strong>{{ label }}</strong></label>
+      <input
+        :ref="refName"
+        type="text"
+        placeholder="0"
+        v-model="inputVal"
+        @focus="$event.target.select()"
+        class="form-control centered-input"
+      >
+    </div>
 </template>
 
 <script>
@@ -32,19 +32,14 @@ export default {
   computed: {
     inputVal: {
       get() {
-        return this.value
+        return this.value || 0
       },
       set(val) {
-        console.log('HELP', val);
-        this.$emit('input', {val: val, index: this.index})
+        this.$emit('input', {val: parseInt(val) || 0, index: this.index})
       }
     },
     refName() {
-      if (this.index == 0) {
-        return 'firstInput'
-      } else {
-        return 'other'
-      }
+      return (this.index == 0) ? 'firstInput' : 'other'
     }
   },
   methods: {
@@ -59,3 +54,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.centered-input {
+  text-align: center;
+}
+</style>

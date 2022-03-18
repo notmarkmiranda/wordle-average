@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <wordle-averager />
-  </div>/
+  </div>
 </template>
 
 <script>

@@ -4,14 +4,14 @@
     <hr />
     <h3>Guess Distribution</h3>
     <div class="row justify-content-center mb-4">
-      <guess-input-field
-        v-for="(guess, index) in guessDistribution"
-        :key="index"
-        :index="index"
-        :label="(index + 1).toString()"
-        :value="guessDistribution[index]"
-        @input="setGuess"
-      />
+      <template v-for="(guess, index) in guessDistribution" :key="index">
+        <guess-input-field
+          :index="index"
+          :label="(index + 1).toString()"
+          :value="guessDistribution[index]"
+          @input="setGuess"
+        />
+      </template>
     </div>
     <div class="col">
       <h3>Total Number of successful plays: {{ numberOfPlays }}</h3>
@@ -42,13 +42,6 @@ export default {
     average() {
       return (this.sumOfGuesses / this.numberOfPlays).toFixed(3)
     },
-    computeRef(index) {
-      if (index==0) {
-        return 'first'
-      } else {
-        return 'other'
-      }
-    }
   },
   methods: {
     setGuess(obj) {
