@@ -1,24 +1,3 @@
-# wordle-average
+# Wordle-average
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+I just wanted to build something in Vue and I also wanted to know the average # of guesses it takes me to guess the wordle
