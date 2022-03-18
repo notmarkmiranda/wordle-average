@@ -29,7 +29,7 @@ export default {
   components: { GuessInputField },
   data() {
     return {
-      guessDistribution: [2, 4, 16, 18, 8, 3]
+      guessDistribution: [0, 0, 0, 0, 0, 0]
     }
   },
   computed: {
@@ -40,6 +40,7 @@ export default {
       return this.guessDistribution.reduce((acc, val, index) => acc + ((index + 1) * val), 0)
     },
     average() {
+      if (this.numberOfPlays == 0) { return 0 }
       return (this.sumOfGuesses / this.numberOfPlays).toFixed(3)
     },
   },
